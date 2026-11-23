@@ -88,17 +88,3 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   }
 });
 
-document.querySelector("#whatsapp-link")?.addEventListener("click", (event) => {
-  event.preventDefault();
-  const number = document.body.dataset.whatsappNumber?.trim();
-  if (!number) {
-    alert("The official WhatsApp number has not been added yet.");
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-    return;
-  }
-
-  const message = encodeURIComponent(
-    "Hello E-CUSTOMS, I would like to discuss a custom CNC woodwork project."
-  );
-  window.open(`https://wa.me/${number}?text=${message}`, "_blank", "noopener,noreferrer");
-});
